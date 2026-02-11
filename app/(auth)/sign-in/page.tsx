@@ -1,9 +1,8 @@
 import SignInForm from '@/components/signin-form'
+import { requireNoAuth } from '@/lib/auth-utils'
 
-export default function SignInPage() {
-	return (
-		<div className="flex h-dvh justify-center items-center">
-			<SignInForm />
-		</div>
-	)
+export default async function SignInPage() {
+	await requireNoAuth()
+
+	return <SignInForm />
 }

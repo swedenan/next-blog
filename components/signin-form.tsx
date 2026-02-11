@@ -67,6 +67,8 @@ export default function SignInForm() {
 			)
 		} catch (error) {
 			console.log(error)
+
+			toast.error(error as string)
 		} finally {
 			setIsLoading(false)
 		}

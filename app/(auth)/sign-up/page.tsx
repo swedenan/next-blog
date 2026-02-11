@@ -1,9 +1,8 @@
 import SignUpForm from '@/components/signup-form'
+import { requireNoAuth } from '@/lib/auth-utils'
 
-export default function SignUpPage() {
-	return (
-		<div className="flex h-dvh justify-center items-center">
-			<SignUpForm />
-		</div>
-	)
+export default async function SignUpPage() {
+	await requireNoAuth()
+
+	return <SignUpForm />
 }
