@@ -1,15 +1,12 @@
 import { AppSidebar } from '@/components/app-sidebar'
-import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
+import { SidebarProvider } from '@/components/ui/sidebar'
 import { ReactNode } from 'react'
 
 export default function AdminLayout({ children }: { children: ReactNode }) {
 	return (
 		<SidebarProvider>
 			<AppSidebar />
-			<main>
-				<SidebarTrigger />
-				{children}
-			</main>
+			<div className="p-6 w-full">{children}</div>
 		</SidebarProvider>
 	)
 }
